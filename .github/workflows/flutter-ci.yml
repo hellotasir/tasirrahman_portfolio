@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 jobs:
-  build-windows:
+  build-static-website:
     runs-on: windows-latest
 
     steps:
