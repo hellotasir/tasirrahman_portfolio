@@ -1,0 +1,30 @@
+name: tasirrahman_portfolio_flutter_ci
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - 'pubspec.lock'
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: "0 0 * * 5"
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - run: flutter pub get
+
+      - run: flutter pub upgrade --major-versions
