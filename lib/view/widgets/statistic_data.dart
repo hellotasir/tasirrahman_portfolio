@@ -1,26 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:tasirrahman_portfolio/models/statistic_Item.dart';
+import 'package:tasirrahman_portfolio/services/statistic_service.dart';
 
 class StatisticData extends StatelessWidget {
-  const StatisticData({super.key});
+  const StatisticData({super.key, required this.service});
+
+  final StatisticService service;
+
+  static const _breakpoint = 600.0;
+  static const _spacing = 24.0;
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final isWide = width >= 600;
+    final items = service.fetchStatistics();
 
     return Padding(
-      padding: const EdgeInsets.all(18.0),
-      child: Align(
-        alignment: Alignment.center,
-        child: Wrap(
-          alignment: isWide ? WrapAlignment.center : WrapAlignment.start,
-          spacing: 24,
-          runSpacing: 24,
-          children: const [
-            _StatCard(title: 'Dart Experience', value: '2+ Years'),
-            _StatCard(title: 'Flutter Experience', value: '2+ Years'),
-            _StatCard(title: 'App · Web · Desktop', value: '3.5+ Years'),
-          ],
+      padding: const EdgeInsets.all(18),
+      child: Center(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final isWide = constraints.maxWidth >= _breakpoint;
+            final cardWidth = isWide ? 320.0 : constraints.maxWidth;
+
+            return Wrap(
+              alignment: isWide ? WrapAlignment.center : WrapAlignment.start,
+              spacing: _spacing,
+              runSpacing: _spacing,
+              children: items
+                  .map((item) => _StatCard(item: item, width: cardWidth))
+                  .toList(),
+            );
+          },
         ),
       ),
     );
@@ -28,44 +38,45 @@ class StatisticData extends StatelessWidget {
 }
 
 class _StatCard extends StatelessWidget {
-  final String title;
-  final String value;
+  const _StatCard({required this.item, required this.width});
 
-  const _StatCard({required this.title, required this.value});
+  final StatisticItem item;
+  final double width;
+
+  static const _radius = 16.0;
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final isWide = width >= 600;
+    final theme = Theme.of(context);
 
-    return Container(
-      width: isWide ? 340 : double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Theme.of(context).colorScheme.surface,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-            color: Colors.black.withValues(alpha: 0.1),
+    return SizedBox(
+      width: width,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(_radius),
+          color: theme.colorScheme.surface,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                item.value,
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                item.title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 14),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            value,
-            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 14),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tasirrahman_portfolio/repositories/local_statistic_repository.dart';
 import 'package:tasirrahman_portfolio/repositories/skill_repository.dart';
 import 'package:tasirrahman_portfolio/services/skill_services.dart';
+import 'package:tasirrahman_portfolio/services/statistic_service.dart';
 import 'package:tasirrahman_portfolio/view/widgets/about_me.dart';
 import 'package:tasirrahman_portfolio/view/widgets/app_bar.dart';
+import 'package:tasirrahman_portfolio/view/widgets/contact_widget.dart';
 import 'package:tasirrahman_portfolio/view/widgets/footer.dart';
 import 'package:tasirrahman_portfolio/view/widgets/material_widget.dart';
 import 'package:tasirrahman_portfolio/view/widgets/skill_widget.dart';
@@ -28,10 +31,13 @@ class _HomePageState extends State<HomePage> {
             children: [
               AboutMe(),
               SizedBox(height: 20),
-              StatisticData(),
+              StatisticData(
+                service: StatisticService(LocalStatisticRepository()),
+              ),
               SizedBox(height: 20),
               SkillsWidget(service: SkillService(LocalSkillRepository())),
-              SizedBox(height: 20),
+              SizedBox(height: 70),
+              ContactWidget(),
               FooterWidget(),
             ],
           ),

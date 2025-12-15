@@ -1,43 +1,98 @@
 import 'package:flutter/material.dart';
-import 'package:tasirrahman_portfolio/models/skill_model.dart';
+import 'package:tasirrahman_portfolio/models/skill.dart';
 import 'package:tasirrahman_portfolio/services/skill_services.dart';
 
 class SkillsWidget extends StatelessWidget {
+  const SkillsWidget({super.key, required this.service});
+
   final SkillService service;
 
-  const SkillsWidget({super.key, required this.service});
+  static const _maxWidth = 1100.0;
+  static const _wideBreakpoint = 720.0;
 
   @override
   Widget build(BuildContext context) {
     final skills = service.fetchSkills();
-    final width = MediaQuery.of(context).size.width;
-    final isWide = width >= 600;
 
     return Padding(
-      padding: const EdgeInsets.all(18.0),
-      child: Align(
-        alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
+      child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1100),
+          constraints: const BoxConstraints(maxWidth: _maxWidth),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isWide = constraints.maxWidth >= _wideBreakpoint;
+
+              return Column(
+                children: [
+                  Text(
+                    'Skills',
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 32),
+                  Wrap(
+                    spacing: 20,
+                    runSpacing: 20,
+                    alignment: WrapAlignment.center,
+                    children: List.generate(
+                      skills.length,
+                      (i) => _SkillCard(
+                        skill: skills[i],
+                        width: isWide ? 240 : constraints.maxWidth,
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SkillCard extends StatelessWidget {
+  const _SkillCard({required this.skill, required this.width});
+
+  final Skill skill;
+  final double width;
+
+  static const _radius = 20.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return SizedBox(
+      height: 150,
+      width: width,
+      child: Material(
+        color: colorScheme.surface,
+        borderRadius: BorderRadius.circular(_radius),
+        child: Padding(
+          padding: const EdgeInsets.all(18),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'My Skills',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+                skill.title,
+                style: textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 12),
               Wrap(
-                spacing: 16,
-                runSpacing: 16,
-                alignment: isWide ? WrapAlignment.center : WrapAlignment.start,
-                children: skills
-                    .map((skill) => _SkillCard(skill: skill, isWide: isWide))
-                    .toList(),
+                spacing: 10,
+                runSpacing: 10,
+                children: List.generate(
+                  skill.tools.length,
+                  (i) => _ToolLabel(label: skill.tools[i]),
+                ),
               ),
             ],
           ),
@@ -47,55 +102,20 @@ class SkillsWidget extends StatelessWidget {
   }
 }
 
-class _SkillCard extends StatelessWidget {
-  final Skill skill;
-  final bool isWide;
+class _ToolLabel extends StatelessWidget {
+  const _ToolLabel({required this.label});
 
-  const _SkillCard({required this.skill, required this.isWide});
+  final String label;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 160,
-      width: isWide ? 260 : double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Theme.of(context).colorScheme.surface,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-            color: Colors.black.withValues(alpha: 0.1),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            skill.title,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          if (skill.tools.isNotEmpty) ...[
-            const SizedBox(height: 12),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: skill.tools
-                  .map(
-                    (tool) => Text(
-                      tool,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    ),
-                  )
-                  .toList(),
-            ),
-          ],
-        ],
+    final theme = Theme.of(context);
+
+    return Text(
+      label,
+      style: theme.textTheme.labelMedium?.copyWith(
+        color: theme.colorScheme.primary,
+        fontWeight: FontWeight.w500,
       ),
     );
   }

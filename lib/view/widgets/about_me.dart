@@ -3,45 +3,50 @@ import 'package:flutter/material.dart';
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
+  static const double _maxWidth = 600;
+  static const double _wideSize = 350;
+  static const double _narrowSize = 150;
+
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final isWide = width >= 600;
-
     return Padding(
-      padding: const EdgeInsets.all(18.0),
-      child: Align(
-        alignment: Alignment.center,
+      padding: const EdgeInsets.all(18),
+      child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 600),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(175),
-                child: Image.asset(
-                  'lib/assets/tasir_profile.jpeg',
-                  fit: BoxFit.cover,
-                  width: isWide ? 350 : 150,
-                  height: isWide ? 350 : 150,
-                ),
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'About Me',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                'I am Tasir Rahman, a passionate developer with expertise in Flutter and mobile app development. I love creating beautiful and functional applications that provide great user experiences.',
-                textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 16),
-              ),
-            ],
+          constraints: const BoxConstraints(maxWidth: _maxWidth),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final size = constraints.maxWidth >= _maxWidth
+                  ? _wideSize
+                  : _narrowSize;
+
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    width: size,
+                    height: size,
+                    child: const CircleAvatar(
+                      backgroundImage: AssetImage(
+                        'lib/assets/tasir_profile.jpeg',
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    'About Me',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'I am Tasir Rahman, a passionate developer with expertise in Flutter and mobile app development. I love creating beautiful and functional applications that provide great user experiences.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              );
+            },
           ),
         ),
       ),

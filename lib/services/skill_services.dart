@@ -1,4 +1,4 @@
-import 'package:tasirrahman_portfolio/models/skill_model.dart';
+import 'package:tasirrahman_portfolio/models/skill.dart';
 import 'package:tasirrahman_portfolio/repositories/skill_repository.dart';
 
 class SkillService {
