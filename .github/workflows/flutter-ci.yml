@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 jobs:
-  build-static-website:
+  build-and-update:
     runs-on: windows-latest
 
     steps:
@@ -28,3 +28,12 @@ jobs:
       - run: flutter pub get
 
       - run: flutter pub upgrade --major-versions
+
+      - run: flutter build web --release
+
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add pubspec.lock
+          git commit -m "chore: auto-upgrade flutter dependencies" || echo "No changes"
+          git push

@@ -6,6 +6,7 @@ import 'package:tasirrahman_portfolio/services/statistic_service.dart';
 import 'package:tasirrahman_portfolio/view/widgets/about_me.dart';
 import 'package:tasirrahman_portfolio/view/widgets/app_bar.dart';
 import 'package:tasirrahman_portfolio/view/widgets/contact_widget.dart';
+import 'package:tasirrahman_portfolio/view/widgets/faq_widget.dart';
 import 'package:tasirrahman_portfolio/view/widgets/footer.dart';
 import 'package:tasirrahman_portfolio/view/widgets/material_widget.dart';
 import 'package:tasirrahman_portfolio/view/widgets/skill_widget.dart';
@@ -36,6 +37,8 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 20),
               SkillsWidget(service: SkillService(LocalSkillRepository())),
+              SizedBox(height: 20),
+              FaqWidget(),
               SizedBox(height: 70),
               ContactWidget(),
               FooterWidget(),
