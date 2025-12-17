@@ -1,5 +1,5 @@
-import 'package:tasirrahman_portfolio/models/statistic_Item.dart';
-import 'package:tasirrahman_portfolio/repositories/statistic_repository.dart';
+import 'package:tasirrahman_portfolio/models/statistic.dart';
+import 'package:tasirrahman_portfolio/repositories/statistic_repository/statistic_repository.dart';
 
 class StatisticService {
   final StatisticRepository repository;

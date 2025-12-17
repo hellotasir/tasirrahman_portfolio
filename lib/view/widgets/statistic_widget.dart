@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tasirrahman_portfolio/models/statistic_Item.dart';
+import 'package:tasirrahman_portfolio/models/statistic.dart';
 import 'package:tasirrahman_portfolio/services/statistic_service.dart';
 
-class StatisticData extends StatelessWidget {
-  const StatisticData({super.key, required this.service});
-
+class StatisticWidget extends StatelessWidget {
+  const StatisticWidget({super.key, required this.service});
   final StatisticService service;
 
   static const _breakpoint = 600.0;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AboutMe extends StatelessWidget {
-  const AboutMe({super.key});
+class AboutMeWidget extends StatelessWidget {
+  const AboutMeWidget({super.key});
 
   static const double _maxWidth = 600;
   static const double _wideSize = 350;

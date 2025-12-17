@@ -12,23 +12,15 @@ class FaqService {
       },
       {
         'id': '2',
-        'question': 'What is your experience with Dart and Flutter?',
+        'question': 'What is my experience with Dart and Flutter?',
         'answer':
-            'I have over 2.5 years of hands-on experience building cross-platform applications with Flutter, including 1.5 years of professional experience delivering Android, Windows and Web applications.',
+            'I have hands-on experience developing and delivering cross-platform applications with Flutter, including production-grade Android, Windows, and Web apps.',
       },
       {
-        'id': '3',
-        'question':
-            'Have you deployed applications to platforms like the Play Store or App Store?',
-        'answer':
-            'I have not published apps to the Play Store or App Store due to personal constraints. However, I have extensive experience deploying and managing production web applications using Firebase Hosting, Netlify, and Vercel.',
-      },
-      {
-        'id': '4',
-        'question':
-            'Have you worked with PaaS platforms such as GCP, AWS, or Azure?',
-        'answer':
-            'While I have not worked directly with GCP, AWS, or Azure in production, I have strong practical experience using Supabase, Firebase, and MongoDB for backend services and cloud-based application development.',
+        "id": "3",
+        "question": "How can you verify my expertise in Flutter?",
+        "answer":
+            "You can review my open-source Flutter portfolio application on GitHub: https://github.com/hellotasir/tasirrahman_portfolio. The project demonstrates real-world Flutter development with clean architecture, proper state management, reusable widgets, and production-ready practices focused on scalability, performance, and maintainability.",
       },
     ];
   }

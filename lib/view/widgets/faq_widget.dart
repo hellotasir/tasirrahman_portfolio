@@ -35,43 +35,46 @@ class _FaqWidgetState extends State<FaqWidget> {
             ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: 32),
-          SizedBox(
-            height: 300,
-            width: 800,
-            child: FutureBuilder<List<Faq>>(
-              future: future,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                if (!snapshot.hasData) {
-                  return const Center(child: Text('No FAQs found'));
-                }
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: SizedBox(
+              height: 300,
+              width: 800,
+              child: FutureBuilder<List<Faq>>(
+                future: future,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  if (!snapshot.hasData) {
+                    return const Center(child: Text('No FAQs found'));
+                  }
 
-                return ListView.builder(
-                  itemCount: snapshot.data!.length,
-                  itemBuilder: (context, index) {
-                    final faq = snapshot.data![index];
-                    return Container(
-                      margin: const EdgeInsets.symmetric(vertical: 8),
-                      decoration: BoxDecoration(
-                        color: theme.colorScheme.surface,
-                        border: Border.all(color: theme.colorScheme.surface),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: ExpansionTile(
-                        title: Text(faq.question),
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(16),
-                            child: Text(faq.answer),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              },
+                  return ListView.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      final faq = snapshot.data![index];
+                      return Container(
+                        margin: const EdgeInsets.symmetric(vertical: 8),
+                        decoration: BoxDecoration(
+                          color: theme.colorScheme.surface,
+                          border: Border.all(color: theme.colorScheme.surface),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: ExpansionTile(
+                          title: Text(faq.question),
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Text(faq.answer),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
         ],

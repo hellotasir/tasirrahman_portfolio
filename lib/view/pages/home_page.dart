@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:tasirrahman_portfolio/repositories/local_statistic_repository.dart';
+import 'package:tasirrahman_portfolio/repositories/statistic_repository/local_statistic_repository.dart';
 import 'package:tasirrahman_portfolio/repositories/skill_repository.dart';
-import 'package:tasirrahman_portfolio/services/skill_services.dart';
+import 'package:tasirrahman_portfolio/services/skill_service.dart';
 import 'package:tasirrahman_portfolio/services/statistic_service.dart';
 import 'package:tasirrahman_portfolio/view/widgets/about_me.dart';
 import 'package:tasirrahman_portfolio/view/widgets/app_bar.dart';
 import 'package:tasirrahman_portfolio/view/widgets/contact_widget.dart';
 import 'package:tasirrahman_portfolio/view/widgets/faq_widget.dart';
-import 'package:tasirrahman_portfolio/view/widgets/footer.dart';
+import 'package:tasirrahman_portfolio/view/widgets/footer_widget.dart';
 import 'package:tasirrahman_portfolio/view/widgets/material_widget.dart';
 import 'package:tasirrahman_portfolio/view/widgets/skill_widget.dart';
-import 'package:tasirrahman_portfolio/view/widgets/statistic_data.dart';
+import 'package:tasirrahman_portfolio/view/widgets/statistic_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,9 +30,9 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              AboutMe(),
+              AboutMeWidget(),
               SizedBox(height: 20),
-              StatisticData(
+              StatisticWidget(
                 service: StatisticService(LocalStatisticRepository()),
               ),
               SizedBox(height: 20),

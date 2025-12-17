@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tasirrahman_portfolio/models/skill.dart';
-import 'package:tasirrahman_portfolio/services/skill_services.dart';
+import 'package:tasirrahman_portfolio/services/skill_service.dart';
 
 class SkillsWidget extends StatelessWidget {
   const SkillsWidget({super.key, required this.service});
