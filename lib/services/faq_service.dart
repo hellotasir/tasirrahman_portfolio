@@ -5,22 +5,42 @@ class FaqService {
     await Future.delayed(const Duration(milliseconds: 500));
     return [
       {
-        'id': '1',
-        'question': 'Who am I?',
-        'answer':
-            'I am Tasir Rahman, a Software Engineer and Entrepreneur focused on building scalable mobile and web applications that solve real-world problems.',
+        "id": "1",
+        "question": "What kind of Flutter projects have you worked on?",
+        "answer":
+            "I have worked on a variety of Flutter projects, including mobile applications, web applications, and cross-platform solutions, with a primary focus on production-grade Flutter mobile apps.",
       },
       {
-        'id': '2',
-        'question': 'What is my experience with Dart and Flutter?',
-        'answer':
-            'I have hands-on experience developing and delivering cross-platform applications with Flutter, including production-grade Android, Windows, and Web apps.',
+        "id": "2",
+        "question": "How do you stay updated with the latest Flutter trends?",
+        "answer":
+            "I stay updated by following official Flutter channels, reading documentation and blogs, watching technical talks and community content, and actively experimenting with new releases and features.",
       },
       {
         "id": "3",
-        "question": "How can you verify my expertise in Flutter?",
+        "question": "What is your approach to testing in Flutter?",
         "answer":
-            "You can review my open-source Flutter portfolio application on GitHub: https://github.com/hellotasir/tasirrahman_portfolio. The project demonstrates real-world Flutter development with clean architecture, proper state management, reusable widgets, and production-ready practices focused on scalability, performance, and maintainability.",
+            "I follow Flutter testing best practices by implementing unit tests for business logic, widget tests for UI behavior, and integration tests to validate complete user flows and app stability.",
+      },
+      {
+        "id": "4",
+        "question":
+            "How do you handle state management in your Flutter applications?",
+        "answer":
+            "I select state management solutions based on project complexity and requirements, using Provider, Riverpod, Bloc, GetX, or Redux to ensure predictable, scalable, and maintainable state handling.",
+      },
+      {
+        "id": "5",
+        "question":
+            "How do you manage mobile architecture in your Flutter applications?",
+        "answer":
+            "I manage mobile architecture by applying Clean Architecture with MVVM and MVC where appropriate, enforcing strict separation between presentation, domain, and data layers. I use modular, feature-based design, dependency injection, and clear contracts to keep business logic independent of the UI.",
+      },
+      {
+        "id": "6",
+        "question": "How can I verify your expertise in Flutter?",
+        "answer":
+            "You can review my open-source Flutter web application on GitHub at https://github.com/hellotasir/tasirrahman_portfolio, which demonstrates real-world architecture, state management, and UI practices.",
       },
     ];
   }

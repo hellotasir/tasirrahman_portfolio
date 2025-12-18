@@ -38,7 +38,7 @@ class _FaqWidgetState extends State<FaqWidget> {
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: SizedBox(
-              height: 300,
+              height: 500,
               width: 800,
               child: FutureBuilder<List<Faq>>(
                 future: future,
@@ -62,6 +62,7 @@ class _FaqWidgetState extends State<FaqWidget> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ExpansionTile(
+                          expandedCrossAxisAlignment: CrossAxisAlignment.start,
                           title: Text(faq.question),
                           children: [
                             Padding(
