@@ -40,7 +40,7 @@ class AboutMeWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'I am Tasir Rahman, a passionate developer with expertise in Flutter and mobile app development. I love creating beautiful and functional applications that provide great user experiences.',
+                    'I am Tasir Rahman, a passionate developer with expertise in dart language and its associated technologies. I love creating beautiful and functional applications that provide great user experiences.',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 16),
                   ),
