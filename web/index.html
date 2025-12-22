@@ -22,5 +22,14 @@
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+    const useCanvasKit = true;
+    const config = {
+      renderer: useCanvasKit ? "canvaskit" : "skwasm",
+    };
+    _flutter.loader.load({
+      config: config,
+    });
+  </script>
 </body>
 </html>
