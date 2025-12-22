@@ -8,7 +8,7 @@ class FaqService {
         "id": "1",
         "question": "What kinds of projects have you worked on?",
         "answer":
-            "I have worked on a wide range of production-grade projects using the Dart language, including client-facing applications, web-oriented solutions, and cross-platform systems, with a strong emphasis on maintainable and scalable codebases.",
+            "I have worked on a wide range of projects using the Dart language including mobile applications, web applications and desktop applications with a strong emphasis on maintainable and scalable codebases.",
       },
       {
         "id": "2",
@@ -22,7 +22,7 @@ class FaqService {
         "id": "3",
         "question": "How can I verify your expertise in Dart?",
         "answer":
-            "You can review my open-source projects written in Dart on GitHub at https://github.com/hellotasir, which demonstrate my real-world architecture, asynchronous programming, and best practices in code organization.",
+            "You can review my open-source projects written in Dart on GitHub at https://github.com/hellotasir, which showcase my coding style, problem-solving skills, and adherence to best practices in Dart development.",
       },
       {
         "id": "4",
