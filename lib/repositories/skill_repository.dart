@@ -7,13 +7,19 @@ abstract class SkillRepository {
 class LocalSkillRepository implements SkillRepository {
   @override
   List<Skill> getSkills() => const [
-    Skill(title: 'Dart Language, Pub Packages & Flutter SDK', tools: []),
-    Skill(title: 'Widgets, Animations & Accessibility', tools: []),
-    Skill(title: 'State Management & Mobile App Architecture', tools: []),
-    Skill(title: 'API & SDK Integration', tools: []),
-    Skill(title: 'Local Storage, PaaS, Network & Cache', tools: []),
-    Skill(title: 'Performance, Security & Testing', tools: []),
-    Skill(title: 'Deployment & Platform Support', tools: []),
-    Skill(title: 'Version Control & Project Management', tools: []),
+    Skill(title: 'Cross-Platform Development', tools: []),
+    Skill(title: 'Dart Language, and Pub Packages & Plugins', tools: []),
+    Skill(title: 'Flutter, Jaspr, Dart Frog and Serverpod', tools: []),
+    Skill(title: 'Widgets, Animations, and Accessibility', tools: []),
+    Skill(
+      title: 'Architecture, Design Patterns and State Management',
+      tools: [],
+    ),
+    Skill(title: 'Data Structures, Algorithms, and Problem Solving', tools: []),
+    Skill(title: 'SDK & API', tools: []),
+    Skill(title: 'Cloud Services, Local Storage, Network & Cache', tools: []),
+    Skill(title: 'Performance, Security, and Testing', tools: []),
+    Skill(title: 'CI/CD, Deployment, and Platform Support', tools: []),
+    Skill(title: 'Management and Version Control', tools: []),
   ];
 }

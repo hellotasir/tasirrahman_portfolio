@@ -1,3 +1,4 @@
 # Tasir Rahman - Portfolio
 
-A static portfolio website repository built entirely with Dart and Flutter, purpose-designed to showcase expertise within the Dart–Flutter ecosystem.
+A static portfolio website repository built entirely using the Dart language, thoughtfully designed to demonstrate proficiency, best practices, and real-world experience across the Dart ecosystem.
+

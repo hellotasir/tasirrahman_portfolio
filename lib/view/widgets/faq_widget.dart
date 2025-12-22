@@ -38,7 +38,7 @@ class _FaqWidgetState extends State<FaqWidget> {
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: SizedBox(
-              height: 500,
+              height: 700,
               width: 800,
               child: FutureBuilder<List<Faq>>(
                 future: future,

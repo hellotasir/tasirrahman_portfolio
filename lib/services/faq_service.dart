@@ -6,41 +6,48 @@ class FaqService {
     return [
       {
         "id": "1",
-        "question": "What kind of Flutter projects have you worked on?",
+        "question": "What kinds of projects have you worked on?",
         "answer":
-            "I have worked on a variety of Flutter projects, including mobile applications, web applications, and cross-platform solutions, with a primary focus on production-grade Flutter mobile apps.",
+            "I have worked on a wide range of production-grade projects using the Dart language, including client-facing applications, web-oriented solutions, and cross-platform systems, with a strong emphasis on maintainable and scalable codebases.",
       },
       {
         "id": "2",
-        "question": "How do you stay updated with the latest Flutter trends?",
+        "question":
+            "How do you stay up to date with the Dart and its associated frameworks?",
         "answer":
-            "I stay updated by following official Flutter channels, reading documentation and blogs, watching technical talks and community content, and actively experimenting with new releases and features.",
+            "I stay current by regularly following official Dart and framework channels, reviewing updated documentation, reading in-depth technical articles, watching conference talks, community contents, and actively experimenting with new features and releases.",
       },
+
       {
         "id": "3",
-        "question": "What is your approach to testing in Flutter?",
+        "question": "How can I verify your expertise in Dart?",
         "answer":
-            "I follow Flutter testing best practices by implementing unit tests for business logic, widget tests for UI behavior, and integration tests to validate complete user flows and app stability.",
+            "You can review my open-source projects written in Dart on GitHub at https://github.com/hellotasir, which demonstrate my real-world architecture, asynchronous programming, and best practices in code organization.",
       },
       {
         "id": "4",
-        "question":
-            "How do you handle state management in your Flutter applications?",
+        "question": "What are you currently learning?",
         "answer":
-            "I select state management solutions based on project complexity and requirements, using Provider, Riverpod, Bloc, GetX, or Redux to ensure predictable, scalable, and maintainable state handling.",
+            "I am currently deepening my understanding of the Dart language across backend, web, and cross-platform application development, with a strong focus on writing efficient, testable, and scalable Dart code.",
       },
       {
         "id": "5",
         "question":
-            "How do you manage mobile architecture in your Flutter applications?",
+            "If you have more experience, why do you have fewer projects?",
         "answer":
-            "I manage mobile architecture by applying Clean Architecture with MVVM and MVC where appropriate, enforcing strict separation between presentation, domain, and data layers. I use modular, feature-based design, dependency injection, and clear contracts to keep business logic independent of the UI.",
+            "I prioritize depth and quality over volume. Rather than accumulating many small projects, I focus on building fewer but more robust, well-structured, and scalable solutions. This allows me to apply strong engineering principles, maintain high standards, and deliver long-term value through each project.",
       },
       {
         "id": "6",
-        "question": "How can I verify your expertise in Flutter?",
+        "question": "What skills do you not have experience with?",
         "answer":
-            "You can review my open-source Flutter web application on GitHub at https://github.com/hellotasir/tasirrahman_portfolio, which demonstrates real-world architecture, state management, and UI practices.",
+            "I prefer to discuss skill gaps openly and honestly in direct conversation so I can provide proper context. My goal is always to present a clear and accurate picture of my abilities. If you are looking for experience in a specific area or technology, feel free to ask and I will clarify my level of exposure or learning status.",
+      },
+      {
+        "id": "7",
+        "question": "What is the purpose of creating this portfolio?",
+        "answer":
+            "It is a static portfolio website built entirely using the Dart language, thoughtfully designed to demonstrate my proficiency, best practices, and real-world experience across the Dart ecosystem.",
       },
     ];
   }

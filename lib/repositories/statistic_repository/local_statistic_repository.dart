@@ -6,15 +6,12 @@ class LocalStatisticRepository implements StatisticRepository {
   List<StatisticItem> getStatistics() {
     return [
       StatisticItem(
-        title: 'Dart Experience',
+        title: 'Dart Language Experience',
         value: '${DateTime.now().year - 2022}+ Years',
       ),
+      StatisticItem(title: 'Projects Completed', value: '15+'),
       StatisticItem(
-        title: 'Flutter Experience',
-        value: '${DateTime.now().year - 2022}+ Years',
-      ),
-      StatisticItem(
-        title: 'Mobile · Web · Desktop',
+        title: 'Cross-Platform Experience',
         value: '${DateTime.now().year - 2022}+ Years',
       ),
     ];

@@ -26,7 +26,7 @@ class SkillsWidget extends StatelessWidget {
               return Column(
                 children: [
                   Text(
-                    'Skills',
+                    'Skills I am trying to Master',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
