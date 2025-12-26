@@ -118,7 +118,6 @@ class _PlatformCard extends StatelessWidget {
       PlatformType.windows => 'Windows',
       PlatformType.ios => 'iOS',
       PlatformType.macos => 'macOS',
-      PlatformType.linux => 'Linux',
       PlatformType.embedded => 'Embedded',
       PlatformType.backend => 'Backend',
     };
@@ -131,7 +130,6 @@ class _PlatformCard extends StatelessWidget {
       PlatformType.windows => Icons.desktop_windows,
       PlatformType.ios => Icons.phone_iphone,
       PlatformType.macos => Icons.laptop_mac,
-      PlatformType.linux => Icons.computer,
       PlatformType.embedded => Icons.memory,
       PlatformType.backend => Icons.storage,
     };

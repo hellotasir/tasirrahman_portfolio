@@ -1,13 +1,4 @@
-enum PlatformType {
-  android,
-  web,
-  windows,
-  ios,
-  macos,
-  linux,
-  embedded,
-  backend,
-}
+enum PlatformType { android, web, windows, ios, macos, embedded, backend }
 
 class PlatformSupport {
   final PlatformType platform;
