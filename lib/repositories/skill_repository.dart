@@ -9,7 +9,7 @@ class LocalSkillRepository implements SkillRepository {
   List<Skill> getSkills() => const [
     Skill(title: 'Cross-Platform Development', tools: []),
     Skill(title: 'Dart Language, and Pub Packages & Plugins', tools: []),
-    Skill(title: 'Flutter, Jaspr, and Dart Frog', tools: []),
+    Skill(title: 'Flutter, and Dart Frog', tools: []),
     Skill(title: 'Widgets, Animations, and Accessibility', tools: []),
     Skill(
       title: 'Architecture, Design Patterns and State Management',
