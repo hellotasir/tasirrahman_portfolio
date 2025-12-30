@@ -8,7 +8,7 @@ class FaqService {
         "id": "1",
         "question": "What kinds of projects have you worked on?",
         "answer":
-            "I have worked on a wide range of projects using the Dart language including mobile applications, web applications and desktop applications with a strong emphasis on maintainable and scalable codebases.",
+            "I have worked on a wide range of projects using the Dart language including mobile applications, web applications, backend projects and desktop applications with a strong emphasis on maintainable and scalable codebases.",
       },
       {
         "id": "2",

@@ -14,7 +14,7 @@ class LocalPlatformRepository implements PlatformRepository {
       PlatformSupport(platform: PlatformType.ios, isSupported: false),
       PlatformSupport(platform: PlatformType.macos, isSupported: false),
       PlatformSupport(platform: PlatformType.embedded, isSupported: false),
-      PlatformSupport(platform: PlatformType.backend, isSupported: false),
+      PlatformSupport(platform: PlatformType.backend, isSupported: true),
     ];
   }
 }

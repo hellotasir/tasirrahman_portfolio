@@ -12,7 +12,7 @@ class LocalSkillRepository implements SkillRepository {
     Skill(title: 'Flutter, and Dart Frog', tools: []),
     Skill(title: 'Widgets, Animations, and Accessibility', tools: []),
     Skill(
-      title: 'Architecture, Design Patterns and State Management',
+      title: 'Clean Architecture, Design Patterns and State Management',
       tools: [],
     ),
     Skill(title: 'Data Structures, Algorithms, and Problem Solving', tools: []),
