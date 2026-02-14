@@ -7,12 +7,12 @@ class LocalStatisticRepository implements StatisticRepository {
     return [
       StatisticItem(
         title: 'Dart Language Experience',
-        value: '${DateTime.now().year - 2022}+ Years',
+        value: '${DateTime.now().year - 2024}+ Years',
       ),
       StatisticItem(title: 'Projects Completed', value: '15+'),
       StatisticItem(
         title: 'Cross-Platform Experience',
-        value: '${DateTime.now().year - 2022}+ Years',
+        value: '${DateTime.now().year - 2024}+ Years',
       ),
     ];
   }
